@@ -126,7 +126,7 @@
         dataType = element.data('type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 
         if (element.is('form')) {
-          method = element.attr('method');
+          method = element.find('[name=_method]').val() || element.attr('method'); 
           url = element.attr('action');
           data = element.serializeArray();
           // memoized value from clicked submit button
